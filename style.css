@@ -576,6 +576,17 @@ section { position: relative; }
   transform: translateY(-1px);
 }
 
+/* ── TAGS STATIQUES (SANS EFFET AU SURVOL) ── */
+.tag.tag-static {
+  cursor: default; /* Remplace la main par le pointeur normal */
+}
+
+.tag.tag-static:hover {
+  background: rgba(129, 140, 248, 0.08) !important; /* Reste à la couleur d'origine */
+  border-color: rgba(129, 140, 248, 0.2) !important; /* Reste à la bordure d'origine */
+  transform: none !important; /* Annule le petit mouvement vers le haut */
+}
+
 /* ── STYLE DU LIEN "VOIR LE DÉTAIL" REAL-CLICK ── */
 .view-detail-btn {
   color: var(--color-accent);
