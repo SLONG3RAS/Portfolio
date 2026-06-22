@@ -11,12 +11,15 @@
 
 <nav id="dock">
   <a href="#accueil" class="active">Accueil</a>
+  <a href="#apropos">À propos</a>
   <a href="#parcours">Parcours</a>
   <a href="#skills">Skills</a>
   <a href="#veille">Veille</a>
   <a href="#projets">Projets</a>
   <a href="#synthese">Synthèse</a>
   <a href="#contact">Contact</a>
+  
+  <button id="theme-toggle" onclick="toggleTheme()" title="Changer le mode de couleur">☀️</button>
 </nav>
 
 <section id="accueil">
@@ -41,71 +44,60 @@
   </div>
 </section>
 
+<section id="apropos" style="padding: 5rem 1.5rem; background: var(--color-surface-alt, transparent);">
+  <div class="max-content" style="max-width: 800px; text-align: center;">
+    <p class="section-eyebrow">Qui suis-je ?</p>
+    <h2 class="section-heading">À <span class="accent">propos</span></h2>
+    
+    <div style="background: var(--color-surface); border: 1px solid var(--color-border); padding: 2.5rem 2rem; border-radius: 20px; box-shadow: 0 4px 20px rgba(0,0,0,0.05); margin-top: 2rem;">
+      <p style="font-size: 1.05rem; color: var(--color-text); line-height: 1.8; text-align: justify; margin-bottom: 2rem;">
+        Actuellement étudiant en <strong>BTS SIO (option SLAM)</strong> au lycée Suzanne Valadon, mon profil s'enrichit d'un parcours académique solide et diversifié. Mon passage par une première année de <strong>BUT Informatique</strong> m'a permis de consolider mes bases fondamentales en algorithmique, en architecture logicielle et en programmation rigoureuse. 
+      </p>
+      <p style="font-size: 1.05rem; color: var(--color-text); line-height: 1.8; text-align: justify; margin-bottom: 2.5rem;">
+        Issu d'un <strong>Bac STI2D option SIN</strong> (Systèmes d'Information et Numérique), j'ai développé une culture technologique pointue ainsi qu'une méthodologie structurée pour concevoir et mener à bien des projets informatiques. Passionné par le développement, j'allie aujourd'hui logique back-end et intégration front-end pour bâtir des solutions logicielles performantes.
+      </p>
+      
+      <div style="text-align: center;">
+        <a href="docs/CV_Sami_Longeras.pdf" download="CV_Sami_Longeras.pdf" class="btn-primary" style="display: inline-flex; align-items: center; gap: 0.5rem; text-decoration: none; padding: 0.8rem 2rem; border-radius: 12px; font-weight: 600; font-size: 0.95rem;">
+          📄 Télécharger mon CV (PDF)
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
 <section id="parcours">
   <div class="max-content">
-    <p class="section-eyebrow">Mon parcours</p>
-    <h2 class="section-heading">Mon <span class="accent">Parcours & Stages</span></h2>
+    <p class="section-eyebrow">Mon historique</p>
+    <h2 class="section-heading">Mon <span class="accent">Parcours</span></h2>
 
-    <div class="parcours-grid">
+    <div class="timeline-container">
       
-      <div>
-        <div class="parcours-col-title">🎓 Formations</div>
-        <div class="timeline" style="display: flex; flex-direction: column;">
-          <div class="tl-item visible">
-            <div>
-              <div class="tl-degree">BTS SIO — option SLAM</div>
-              <div class="tl-school">Lycée Suzanne Valadon · Limoges</div>
-              <div class="tl-desc">Brevet de Technicien Supérieur Services Informatiques aux Organisations, spécialité Solutions Logicielles et Applications Métiers. Formation axée sur le développement d'applications, la gestion de bases de données et les méthodes agiles.</div>
-            </div>
-            <div class="tl-badge">2025 – présent</div>
-          </div>
-          <div class="tl-item visible">
-            <div>
-              <div class="tl-degree">BUT Informatique</div>
-              <div class="tl-school">IUT de Limoges · Limoges</div>
-              <div class="tl-desc">Bachelor Universitaire de Technologie en Informatique. Année complète couvrant les fondamentaux du développement logiciel, des réseaux, des bases de données et de la gestion de projets.</div>
-            </div>
-            <div class="tl-badge">2024 – 2025</div>
-          </div>
-          <div class="tl-item visible">
-            <div>
-              <div class="tl-degree">Baccalauréat STI2D — option SIN</div>
-              <div class="tl-school">Lycée Turgot · Limoges</div>
-              <div class="tl-desc">Bac Sciences et Technologies de l'Industrie et du Développement Durable, spécialité Systèmes d'Information et Numérique. Découverte des systèmes embarqués, des réseaux et de la programmation.</div>
-            </div>
-            <div class="tl-badge">2021 – 2024</div>
-          </div>
+      <div class="timeline-block block-scolaire">
+        <div class="tl-item">
+          <span class="tl-badge">2021 - 2023</span>
+          <div class="tl-degree">Baccalauréat STI2D</div>
+          <div class="tl-school">Option SIN (Systèmes d'Information et Numérique)</div>
+          <p class="tl-desc">Découverte des bases des réseaux, du développement et de la gestion de l'information numérique.</p>
         </div>
       </div>
 
-      <div>
-        <div class="parcours-col-title">💼 Stages</div>
-        <div class="timeline" style="display: flex; flex-direction: column;">
-          
-          <div class="tl-item visible">
-            <div>
-              <div class="tl-degree">Stage de 1ère année — BTS SIO (SLAM)</div>
-              <div class="tl-school">Okantis · Limoges</div>
-              <div class="tl-desc">Modernisation et refonte d'outils d'extraction de données pour la suite hospitalière M-RH.</div>
-              
-              <div style="margin-top: 0.8rem;">
-                <a href="#projet-okantis" class="btn-doc-trigger" style="text-decoration: none; font-weight: 500; display: inline-flex; align-items: center; gap: 0.5rem;">
-                  Voir le projet <span>→</span>
-                </a>
-              </div>
+      <div class="timeline-block block-scolaire">
+        <div class="tl-item">
+          <span class="tl-badge">2024 - présent</span>
+          <div class="tl-degree">BTS Services Informatiques aux Organisations (SIO)</div>
+          <div class="tl-school">Option SLAM</div>
+          <p class="tl-desc">Spécialisation dans les Solutions Logicielles et Applications Métiers (Développement Web, bases de données, architecture logicielle).</p>
+        </div>
+      </div>
 
-            </div>
-            <div class="tl-badge">Mai - Juin 2026</div>
-          </div>
-          
-          <div class="tl-item visible" style="opacity: 0.4;">
-            <div>
-              <div class="tl-degree">Stage de 2ème année — BTS SIO</div>
-              <div class="tl-school">À venir</div>
-              <div class="tl-desc">Emplacement réservé pour la seconde période d'immersion professionnelle de deuxième année.</div>
-            </div>
-            <div class="tl-badge">Futur</div>
-          </div>
+      <div class="timeline-block block-stage">
+        <div class="tl-item" id="stage-okantis-tl">
+          <span class="tl-badge badge-pro">mai – juin</span>
+          <div class="tl-degree">Stage Développeur · Okantis</div>
+          <div class="tl-school">Modernisation & Refonte d'outils d'extraction</div>
+          <p class="tl-desc">Modernisation et refonte d'outils d'extraction de données pour la suite hospitalière M-RH.</p>
+          <span class="tl-action-btn">Visualiser le projet <span>→</span></span>
         </div>
       </div>
 
@@ -309,29 +301,7 @@
 
     <div class="proj-grid">
 
-      <div class="proj-card" id="projet-okantis" data-category="stage">
-        <div class="proj-icon">⚙️</div>
-        <div class="proj-name">Refonte & Modernisation d'outils d'extraction</div>
-        <div class="proj-desc">
-          Migration et optimisation de scripts Shell Linux historiques vers des packages PL/SQL natifs Oracle pour la suite hospitalière M-RH.
-        </div>
-        
-        <div class="tags">
-          <span class="tag tag-static">PL/SQL</span>
-          <span class="tag tag-static">Oracle</span>
-          <span class="tag tag-static">TOAD</span>
-          <span class="tag tag-static">Linux / Shell</span>
-          <span class="tag tag-static">Rubycat</span>
-        </div>
-        
-        <div class="proj-links">
-          <span class="view-detail-btn">
-            Voir le détail <span>→</span>
-          </span>
-        </div>
-      </div>
-
-      <div class="proj-card" data-category="cours">
+      <div class="proj-card" id="projet-mvc" data-category="cours">
         <div class="proj-icon">📊</div>
         <div class="proj-name">Architecture MVC</div>
         <div class="proj-desc">Étude et mise en œuvre du design pattern MVC (Modèle-Vue-Contrôleur). Séparation stricte de la logique métier, de l'interface utilisateur et des interactions pour concevoir des applications web et logicielles robustes et maintenables.</div>
@@ -346,11 +316,12 @@
         </div>
         
         <div class="proj-links">
+          <span class="view-detail-btn">Voir le détail <span>→</span></span>
           <a href="https://github.com/SLONG3RAS/ArchiMVC" target="_blank" class="proj-link">GitHub</a>
         </div>
       </div>
 
-      <div class="proj-card" data-category="cours">
+      <div class="proj-card" id="projet-rest0" data-category="cours">
         <div class="proj-icon">🍣</div>
         <h3 class="proj-name">Application Rest0</h3>
         <p class="proj-desc">
@@ -367,15 +338,17 @@
         </div>
         
         <div class="proj-links">
+          <span class="view-detail-btn">Voir le détail <span>→</span></span>
           <a href="https://github.com/SLONG3RAS/Rest0" target="_blank" class="proj-link">GitHub</a>
         </div>
       </div>
 
-      <div class="proj-card" data-category="cours">
+      <div class="proj-card" id="projet-seminaire" data-category="cours">
         <div class="proj-icon">📅</div>
         <h3 class="proj-name">Gestion de Séminaires</h3>
         <p class="proj-desc">
           Conception et développement d'une application de planification et de gestion d'événements d'entreprise. Suivi des inscriptions, affectation des salles, gestion des intervenants.
+        </p>
         
         <div class="tags">
           <span class="tag tag-static">VSCode</span>
@@ -388,11 +361,12 @@
         </div>
         
         <div class="proj-links">
+          <span class="view-detail-btn">Voir le détail <span>→</span></span>
           <a href="https://github.com/SLONG3RAS/Seminaire" target="_blank" class="proj-link">GitHub</a>
         </div>
       </div>
 
-      <div class="proj-card" data-category="cours">
+      <div class="proj-card" id="projet-equestre" data-category="cours">
         <div class="proj-icon">🐎</div>
         <h3 class="proj-name">Gestion de Centre Équestre</h3>
         <p class="proj-desc">
@@ -409,16 +383,16 @@
         </div>
         
         <div class="proj-links">
+          <span class="view-detail-btn">Voir le détail <span>→</span></span>
           <a href="https://github.com/SLONG3RAS/Centre_Equestre" target="_blank" class="proj-link">GitHub</a>
         </div>
       </div>
 
-
-      <div class="proj-card" data-category="cours">
+      <div class="proj-card" id="projet-api" data-category="cours">
         <div class="proj-icon">⚡</div>
         <h3 class="proj-name">API REST Étudiant</h3>
         <p class="proj-desc">
-          Conception et développement d'une API RESTful dédiée à la gestion d'un référentiel d'étudiants. Implémentation des routes d'accès, traitement des requêtes HTTP et sérialisation des réponses au format JSON.
+          Conception et développement d'une API REST dédiée à la gestion d'un référentiel d'étudiants. Implémentation des routes d'accès, traitement des requêtes HTTP et sérialisation des réponses au format JSON.
         </p>
         
         <div class="tags">
@@ -430,7 +404,30 @@
         </div>
         
         <div class="proj-links">
+          <span class="view-detail-btn">Voir le détail <span>→</span></span>
           <a href="https://github.com/SLONG3RAS/API_REST_ETUDIANT" target="_blank" class="proj-link">GitHub</a>
+        </div>
+      </div>
+
+      <div class="proj-card" id="projet-okantis" data-category="stage">
+        <div class="proj-icon">⚙️</div>
+        <div class="proj-name">Refonte & Modernisation d'outils d'extraction</div>
+        <div class="proj-desc">
+          Modernisation et refonte d'outils d'extraction de données pour la suite hospitalière M-RH.
+        </div>
+        
+        <div class="tags">
+          <span class="tag tag-static">PL/SQL</span>
+          <span class="tag tag-static">Oracle</span>
+          <span class="tag tag-static">TOAD</span>
+          <span class="tag tag-static">Linux / Shell</span>
+          <span class="tag tag-static">Rubycat</span>
+        </div>
+        
+        <div class="proj-links">
+          <span class="view-detail-btn">
+            Voir le détail <span>→</span>
+          </span>
         </div>
       </div>
 
@@ -451,7 +448,6 @@
       </p>
       
       <div style="display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap;">
-        
         <button onclick="openSyntheseModal()" class="btn-doc-trigger" style="font-size: 0.9rem; padding: 0.7rem 1.5rem; border-radius: 12px; cursor: pointer;">
           👁️ Visualiser le tableau (PDF)
         </button>
@@ -459,7 +455,6 @@
         <a href="docs/tableau_de_synthese.xlsx" download="Tableau_de_synthese_E5_Sami_Longeras.xlsx" class="btn-doc-trigger" style="font-size: 0.9rem; padding: 0.7rem 1.5rem; border-radius: 12px; text-decoration: none; display: inline-flex; align-items: center; gap: 0.5rem; justify-content: center;">
           📥 Télécharger le fichier (.xlsx)
         </a>
-
       </div>
     </div>
   </div>
@@ -483,27 +478,32 @@
 </footer>
 
 <div id="docModal" class="modal-overlay">
-  <div class="modal-container" style="max-width: 850px; width: 95%; height: 85vh; display: flex; flex-direction: column;">
+  <div class="modal-container" style="max-width: 900px; width: 95%; height: 90vh; display: flex; flex-direction: column;">
     <div class="modal-header">
-      <h3>Documentation Technique — Okantis</h3>
+      <h3 id="modal-project-title">Documentation Technique</h3>
       <button class="modal-close" onclick="closeModal()">&times;</button>
     </div>
-    <div class="modal-body" style="padding: 1.5rem; flex: 1; overflow-y: auto; display: flex; flex-direction: column; gap: 1.5rem;">
+    <div class="modal-body" style="padding: 1.5rem; flex: 1; overflow-y: auto; display: flex; flex-direction: column; gap: 2rem;">
       
-      <div style="background: rgba(255, 255, 255, 0.03); padding: 1.2rem; border-radius: 8px; border: 1px solid rgba(255, 255, 255, 0.05);">
-        <p style="color: #e2e8f0; line-height: 1.6; font-size: 0.95rem; margin: 0;">
-          Dans le cadre de mon BTS SIO, j'ai réalisé la modernisation et la refonte d'outils d'extraction pour la suite hospitalière <strong>M-RH</strong>. J'ai migré des scripts Shell Linux historiques vers des packages <strong>PL/SQL Oracle</strong> natifs (<code>PCK_ANU_BRIVE</code>) afin d'optimiser la sécurité, la performance (via <code>UTL_FILE</code>) et la maintenance. J'ai ensuite fait évoluer la solution vers une architecture générique multi-établissements (<code>PCK_ANU_GENERIQUE</code>).
-        </p>
+      <div>
+        <h4 style="color: var(--color-accent); font-size: 1.1rem; margin-bottom: 0.5rem; display: flex; align-items: center; gap: 0.5rem;">🔍 Aperçu du projet</h4>
+        <div style="background: rgba(255, 255, 255, 0.03); padding: 1.2rem; border-radius: 8px; border: 1px solid var(--color-border);">
+          <p id="modal-project-desc" style="color: var(--color-text); line-height: 1.6; font-size: 0.95rem; margin: 0;"></p>
+        </div>
       </div>
 
-      <div style="flex: 1; min-height: 400px; border-radius: 8px; overflow: hidden;">
-        <iframe 
-          src="docs/documentation_technique_okantis_v24.pdf" 
-          width="100%" 
-          height="100%" 
-          style="border: none; background: #fff;"
-          title="Documentation Technique Okantis">
-        </iframe>
+      <div style="flex: 1; display: flex; flex-direction: column; min-height: 450px;">
+        <h4 style="color: var(--color-accent); font-size: 1.1rem; margin-bottom: 0.5rem; display: flex; align-items: center; gap: 0.5rem;">📄 Documentation Technique</h4>
+        <div style="flex: 1; border-radius: 8px; overflow: hidden; border: 1px solid var(--color-border);">
+          <iframe 
+            id="modal-project-iframe"
+            src="" 
+            width="100%" 
+            height="100%" 
+            style="border: none; background: #fff;"
+            title="Documentation Technique">
+          </iframe>
+        </div>
       </div>
 
     </div>
@@ -517,7 +517,6 @@
       <button class="modal-close" onclick="closeSyntheseModal()">&times;</button>
     </div>
     <div class="modal-body" style="padding: 1rem; flex: 1; overflow-y: auto;">
-      
       <div style="width: 100%; height: 100%; border-radius: 8px; overflow: hidden;">
         <iframe 
           src="docs/tableau_de_synthese.pdf" 
@@ -527,12 +526,73 @@
           title="Tableau de synthèse SIO">
         </iframe>
       </div>
-
     </div>
   </div>
 </div>
 
 <script>
+  // ── Base de données dynamique des projets ──
+  const projetsData = {
+    'projet-okantis': {
+      title: "Modernisation & Refonte — Okantis",
+      desc: "Dans le cadre de mon BTS SIO, j'ai réalisé la modernisation et la refonte d'outils d'extraction pour la suite hospitalière M-RH. J'ai migré des scripts Shell Linux historiques vers des packages PL/SQL Oracle natifs (PCK_ANU_BRIVE) afin d'optimiser la sécurité, la performance (via UTL_FILE) et la maintenance. J'ai ensuite fait évoluer la solution vers une architecture générique multi-établissements (PCK_ANU_GENERIQUE).",
+      pdf: "docs/documentation_technique_okantis_v24.pdf"
+    },
+    'projet-mvc': {
+      title: "Architecture MVC — Design Pattern",
+      desc: "Étude et mise en œuvre pratique du modèle MVC. Séparation de la persistance des données, des vues générées et des routeurs logiques pour garantir la scalabilité d'une application.",
+      pdf: "docs/doc_technique_mvc.pdf"
+    },
+    'projet-rest0': {
+      title: "Application Rest0 — Chaîne de Restauration",
+      desc: "Application de prise de commande et gestion de menus. Gestion des rôles, persistance CRUD dans une base de données MySQL et ergonomie de l'interface.",
+      pdf: "docs/doc_technique_rest0.pdf"
+    },
+    'projet-seminaire': {
+      title: "Gestion de Séminaires — Planification",
+      desc: "Système complet de planification événementielle. Suivi dynamique des inscriptions, contrôle des chevauchements d'horaires et affectation automatisée des ressources physiques (salles).",
+      pdf: "docs/doc_technique_seminaire.pdf"
+    },
+    'projet-equestre': {
+      title: "Gestion de Centre Équestre — Plateforme Métier",
+      desc: "Conception de base de données relationnelle complexe et interface de suivi pour les moniteurs, cavaliers et planning de la cavalerie.",
+      pdf: "docs/doc_technique_centre_equestre.pdf"
+    },
+    'projet-api': {
+      title: "API REST Étudiant — Architecture Back-end",
+      desc: "Conception complète d'un service d'API web. Traitement normé des requêtes HTTP (GET, POST, PUT, DELETE), renvoi systématique des headers et payloads JSON.",
+      pdf: "docs/doc_technique_api_rest.pdf"
+    }
+  };
+
+  // ── Gestion du Switch Mode Sombre / Mode Clair ──
+  function toggleTheme() {
+    const currentTheme = document.documentElement.getAttribute('data-theme');
+    const button = document.getElementById('theme-toggle');
+    
+    if (currentTheme === 'light') {
+      document.documentElement.removeAttribute('data-theme');
+      button.innerHTML = '☀️';
+      localStorage.setItem('theme', 'dark');
+    } else {
+      document.documentElement.setAttribute('data-theme', 'light');
+      button.innerHTML = '🌙';
+      localStorage.setItem('theme', 'light');
+    }
+  }
+
+  // Appliquer le thème sauvegardé au démarrage
+  document.addEventListener('DOMContentLoaded', () => {
+    const savedTheme = localStorage.getItem('theme');
+    const button = document.getElementById('theme-toggle');
+    if (savedTheme === 'light') {
+      document.documentElement.setAttribute('data-theme', 'light');
+      button.innerHTML = '🌙';
+    } else {
+      button.innerHTML = '☀️';
+    }
+  });
+
   // ── Filtrage dynamique des projets ──
   function filterProjects(category, btn) {
     if (btn) {
@@ -549,42 +609,52 @@
     });
   }
 
-  // ── Écouteur global pour rendre TOUTES les cases cliquables ──
+  // ── Écouteur global pour ouvrir la bonne modale selon la carte cliquée ──
   document.querySelectorAll('.proj-card').forEach(card => {
     card.addEventListener('click', function(e) {
-      if (e.target.classList.contains('proj-link')) {
-        return;
-      }
-      if (this.id === 'projet-okantis') {
+      if (e.target.classList.contains('proj-link')) return;
+
+      const idProjet = this.id;
+      if (projetsData[idProjet]) {
+        document.getElementById('modal-project-title').innerText = projetsData[idProjet].title;
+        document.getElementById('modal-project-desc').innerHTML = projetsData[idProjet].desc;
+        document.getElementById('modal-project-iframe').src = projetsData[idProjet].pdf;
         openModal();
       }
     });
   });
 
   // ── Gère le clic depuis le parcours : amène au projet PUIS l'ouvre ──
-  document.querySelector('a[href="#projet-okantis"]').addEventListener('click', function(e) {
-    e.preventDefault(); 
-    
-    const tabTous = document.querySelector('.skills-tabs button[onclick*="all"]');
-    if (tabTous) {
-      filterProjects('all', tabTous);
-    }
+  const stageTimelineItem = document.getElementById('stage-okantis-tl');
+  
+  if (stageTimelineItem) {
+    stageTimelineItem.addEventListener('click', function() {
+      // 1. Affiche tous les projets pour être sûr que la carte Okantis est visible
+      const tabTous = document.querySelector('.skills-tabs button[onclick*="all"]');
+      if (tabTous) filterProjects('all', tabTous);
 
-    const targetCard = document.getElementById('projet-okantis');
-    if (targetCard) {
-      targetCard.scrollIntoView({ behavior: 'smooth', block: 'center' });
-
-      let isScrolling;
-      function checkScrollEnd() {
-        window.clearTimeout(isScrolling);
-        isScrolling = setTimeout(function() {
-          window.removeEventListener('scroll', checkScrollEnd);
-          openModal(); 
-        }, 100);
+      // 2. Cible la carte du projet Okantis dans la grille
+      const targetCard = document.getElementById('projet-okantis');
+      if (targetCard) {
+        // Scroll fluide vers la carte
+        targetCard.scrollIntoView({ behavior: 'smooth', block: 'center' });
+        
+        // Attend la fin du scroll pour ouvrir la modale avec les bonnes infos
+        let isScrolling;
+        function checkScrollEnd() {
+          window.clearTimeout(isScrolling);
+          isScrolling = setTimeout(function() {
+            window.removeEventListener('scroll', checkScrollEnd);
+            document.getElementById('modal-project-title').innerText = projetsData['projet-okantis'].title;
+            document.getElementById('modal-project-desc').innerHTML = projetsData['projet-okantis'].desc;
+            document.getElementById('modal-project-iframe').src = projetsData['projet-okantis'].pdf;
+            openModal(); 
+          }, 100);
+        }
+        window.addEventListener('scroll', checkScrollEnd);
       }
-      window.addEventListener('scroll', checkScrollEnd);
-    }
-  });
+    });
+  }
 
   // ── Skills tabs ──
   function switchSkill(cat, btn) {
@@ -620,45 +690,29 @@
   }, { threshold: 0.05 });
   revealEls.forEach(el => revealObs.observe(el));
 
-  // ── Gestion de la Popup 1 (Okantis) ──
+  // ── Modales Open / Close ──
   function openModal() {
-    const modal = document.getElementById('docModal');
-    modal.classList.add('active');
+    document.getElementById('docModal').classList.add('active');
     document.body.style.overflow = 'hidden';
   }
-
   function closeModal() {
-    const modal = document.getElementById('docModal');
-    modal.classList.remove('active');
+    document.getElementById('docModal').classList.remove('active');
+    document.getElementById('modal-project-iframe').src = ""; // Stop le PDF en tâche de fond
     document.body.style.overflow = '';
   }
-
-  // ── Gestion de la Popup 2 (Synthèse) ──
   function openSyntheseModal() {
-    const modal = document.getElementById('syntheseModal');
-    modal.classList.add('active');
+    document.getElementById('syntheseModal').classList.add('active');
     document.body.style.overflow = 'hidden';
   }
-
   function closeSyntheseModal() {
-    const modal = document.getElementById('syntheseModal');
-    modal.classList.remove('active');
+    document.getElementById('syntheseModal').classList.remove('active');
     document.body.style.overflow = '';
   }
 
-  // Fermeture en cliquant en dehors des modales
   window.onclick = function(event) {
-    const docModal = document.getElementById('docModal');
-    const syntheseModal = document.getElementById('syntheseModal');
-    
-    if (event.target === docModal) {
-      closeModal();
-    }
-    if (event.target === syntheseModal) {
-      closeSyntheseModal();
-    }
+    if (event.target === document.getElementById('docModal')) closeModal();
+    if (event.target === document.getElementById('syntheseModal')) closeSyntheseModal();
   }
 </script>
-
 </body>
 </html>
