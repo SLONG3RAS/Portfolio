@@ -233,6 +233,72 @@ section { position: relative; }
 }
 .btn-outline:hover { border-color: var(--color-accent); transform: translateY(-2px); color: var(--color-accent); }
 
+/* ── À PROPOS ── */
+.about-section {
+  padding: 5rem 1.5rem;
+}
+.about-card {
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  padding: 2.5rem 2rem;
+  border-radius: 20px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+  margin-top: 2rem;
+  transition: background-color 0.3s, border-color 0.3s;
+}
+.about-header-box {
+  margin-bottom: 2rem;
+  border-bottom: 1px solid var(--color-border);
+  padding-bottom: 1.5rem;
+  transition: border-color 0.3s;
+}
+.about-subtitle-main {
+  font-size: 1.3rem;
+  color: var(--color-accent);
+  margin-bottom: 0.5rem;
+  transition: color 0.3s;
+}
+.about-caption {
+  font-size: 1.05rem;
+  color: var(--color-text-secondary);
+  margin: 0;
+  font-style: italic;
+  transition: color 0.3s;
+}
+.about-paragraph {
+  font-size: 1.05rem;
+  color: var(--color-text);
+  line-height: 1.8;
+  text-align: justify;
+  transition: color 0.3s;
+}
+.about-p-spacing {
+  margin-bottom: 1.5rem;
+}
+.about-p-final {
+  margin-bottom: 2rem;
+}
+.about-badge-container {
+  display: flex;
+  gap: 1.5rem;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+.about-custom-badge {
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid var(--color-border);
+  padding: 0.5rem 1rem;
+  border-radius: 30px;
+  font-size: 0.9rem;
+  color: var(--color-text);
+  transition: background-color 0.3s, border-color 0.3s, color 0.3s, transform 0.2s;
+  cursor: default;
+}
+.about-custom-badge:hover {
+  border-color: var(--color-accent);
+  transform: translateY(-2px);
+}
+
 /* ── PARCOURS (TIMELINE CENTRALE ASYMÉTRIQUE) ── */
 #parcours { 
   padding: 5rem 1.5rem 4rem; 
@@ -464,7 +530,7 @@ section { position: relative; }
   transform: translateY(-2px);
 }
 .sk-panel { display: none; animation: fadeUp .35s ease; }
-.sk-panel.active { display: block; }
+.sk-panel.active { block; }
 @keyframes fadeUp { from { opacity:0; transform:translateY(14px); } to { opacity:1; transform:none; } }
 .sk-grid {
   display: grid;
