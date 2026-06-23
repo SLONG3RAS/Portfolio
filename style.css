@@ -242,7 +242,6 @@ section { position: relative; }
   max-width: 850px;
   margin: 4rem auto 0 auto;
 }
-/* La ligne centrale verticale */
 .timeline-container::before {
   content: '';
   position: absolute;
@@ -259,23 +258,18 @@ section { position: relative; }
   width: 50%;
   margin-bottom: 2.5rem;
 }
-/* Aligne la formation scolaire à GAUCHE */
 .block-scolaire {
   left: 0;
   padding-right: 2.5rem;
 }
-/* Aligne les stages à DROITE */
 .block-stage {
   left: 50%;
   padding-left: 2.5rem;
 }
-
-/* Modifié pour rendre l'intégralité du bloc cliquable */
 .block-stage .tl-item {
   position: relative;
   cursor: pointer;
 }
-
 .tl-item {
   background: var(--color-surface);
   border: 1px solid var(--color-border);
@@ -315,8 +309,6 @@ section { position: relative; }
   line-height: 1.6; 
   transition: color 0.3s; 
 }
-
-/* Style et animations du bouton "Visualiser le projet" (Masqué par défaut) */
 .tl-action-btn {
   color: var(--color-accent);
   text-decoration: none;
@@ -327,43 +319,29 @@ section { position: relative; }
   gap: 0.4rem;
   margin-top: 0.5rem;
   align-self: flex-start;
-  
-  /* État initial caché */
   opacity: 0;
   visibility: hidden;
   transform: translateX(-5px); 
   transition: opacity 0.25s ease, transform 0.25s ease, visibility 0.25s ease, color 0.3s;
 }
-
-/* Pseudo-élément pour étendre le lien cliquable sur toute la case */
 .tl-action-btn::after {
   content: "";
   position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
+  top: 0; left: 0; right: 0; bottom: 0;
   z-index: 1;
 }
-
-/* Déclenchement de l'affichage au survol de la case */
 .tl-item:hover .tl-action-btn { 
   opacity: 1; 
   visibility: visible; 
   transform: translateX(0); 
 }
-
-/* Animation de la flèche au survol */
 .tl-item:hover .tl-action-btn span { 
   transform: translateX(4px); 
 }
-
 .tl-action-btn span { 
   transition: transform 0.2s ease; 
   display: inline-block;
 }
-
-/* Style générique des badges de dates */
 .tl-badge {
   background: var(--color-border);
   border: 1px solid transparent;
@@ -377,9 +355,8 @@ section { position: relative; }
   transition: all 0.3s ease;
   text-decoration: none;
   position: relative;
-  z-index: 2; /* Garde le badge cliquable séparément si besoin */
+  z-index: 2;
 }
-/* Style spécifique pour détacher visuellement les stages (Vert/Violet d'accentuation) */
 .tl-badge.badge-pro {
   background: var(--color-accent-glow);
   border: 1px solid var(--color-border);
@@ -539,8 +516,6 @@ section { position: relative; }
   padding-bottom: 0.5rem;
   transition: color 0.3s, border-color 0.3s;
 }
-
-/* Outils de Recherche & Stratégie */
 .veille-tools-card, .veille-strategy-card {
   background: var(--color-surface);
   border: 1px solid var(--color-border);
@@ -563,8 +538,6 @@ section { position: relative; }
 .tool-sub { font-size: 0.82rem; color: var(--color-text-secondary); margin-top: 0.15rem; transition: color 0.3s; }
 .strategy-title { font-weight: 700; font-size: 0.95rem; color: var(--color-accent); margin-bottom: 0.5rem; transition: color 0.3s; }
 .veille-strategy-card p { font-size: 0.85rem; color: var(--color-text-secondary); line-height: 1.6; transition: color 0.3s; }
-
-/* Liste des Articles & Fiches */
 .veille-main-list { display: flex; flex-direction: column; gap: 1.25rem; }
 .veille-card {
   background: var(--color-surface);
@@ -620,7 +593,6 @@ section { position: relative; }
 .proj-icon { font-size: 1.8rem; }
 .proj-name { font-weight: 700; font-size: 1rem; color: var(--color-text); transition: color 0.3s; }
 .proj-desc { font-size: 0.85rem; color: var(--color-text-secondary); line-height: 1.6; flex: 1; transition: color 0.3s; }
-
 .proj-links { 
   display: flex; 
   justify-content: space-between;
@@ -739,14 +711,12 @@ footer {
   transition: color 0.3s, border-top-color 0.3s;
 }
 
-/* ── RESPONSIVE COMPORTEMENTS GENERAL & TIMELINE MOBILE ── */
+/* ── RESPONSIVE GENERAL & TIMELINE MOBILE ── */
 @media (max-width: 768px) {
-  /* Réaligne la ligne de la timeline sur le bord gauche */
   .timeline-container::before {
     left: 16px;
     transform: none;
   }
-  /* Force les blocs de la timeline à prendre toute la largeur */
   .timeline-block {
     width: 100%;
     left: 0 !important;
@@ -754,7 +724,6 @@ footer {
     padding-right: 0 !important;
     margin-bottom: 2rem;
   }
-  /* Maintient le bouton visible sur mobile (pas de hover possible) */
   .tl-action-btn { 
     opacity: 1 !important; 
     visibility: visible !important; 
@@ -791,7 +760,6 @@ footer {
   box-shadow: 0 4px 12px var(--color-accent-glow);
 }
 
-/* Ajustement pour l'iframe de la modale de projet */
 #modal-project-iframe {
   background: var(--color-iframe-bg) !important;
   transition: background-color 0.3s;
