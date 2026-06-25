@@ -924,7 +924,7 @@ body.loading {
   background-color: var(--color-accent);
   border-radius: 2px;
   box-shadow: 0 0 12px var(--color-accent-glow);
-   animation: fillUp 2s linear forwards;
+   animation: fillUp 1.8s linear forwards;
   /* L'animation fillUp a été supprimée d'ici pour éviter les décalages */
 }
 
