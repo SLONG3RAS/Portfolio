@@ -8,6 +8,9 @@
   <link rel="stylesheet" href="style.css"/>
 </head>
 <body>
+  <div id="loading-screen">
+    <div class="spinner"></div>
+  </div>
 
 <nav id="dock">
   <a href="#accueil" class="active">Accueil</a>
@@ -743,6 +746,11 @@
     if (event.target === document.getElementById('docModal')) closeModal();
     if (event.target === document.getElementById('syntheseModal')) closeSyntheseModal();
   }
+
+  window.addEventListener('load', () => {
+  const loader = document.getElementById('loading-screen');
+  loader.classList.add('fade-out');
+  });
 </script>
 </body>
 </html>
