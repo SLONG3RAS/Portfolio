@@ -3,7 +3,7 @@
    THÈME PAR DÉFAUT : SOMBRE (Dark Mode)
    ========================================================================== */
 :root {
-  --color-bg: #0b0f19;                  
+  --color-bg: #0b0f19;          
   --color-surface: #131a2c;             
   --color-border: rgba(255, 255, 255, 0.08);
   --color-text: #f8fafc;                
@@ -23,7 +23,7 @@
    THÈME CLAIR (Light Mode) - Déclenché par le JavaScript
    ========================================================================== */
 html[data-theme="light"] {
-  --color-bg: #f1f5f9;                  
+  --color-bg: #f1f5f9;          
   --color-surface: #ffffff;             
   --color-border: rgba(0, 0, 0, 0.08);
   --color-text: #0f172a;                
@@ -495,25 +495,72 @@ section { position: relative; }
   transition: color 0.3s;
 }
 
-/* --- CORRECTION ICI --- */
+/* ==========================================================================
+   ── SKILLS (CORRIGÉ : ONGLETS ET CARTES VISIBLES) ──
+   ========================================================================== */
+#skills {
+  padding: 4rem 1.5rem;
+  background: linear-gradient(to bottom, transparent, var(--color-accent-glow), transparent);
+}
 
-/* 1. Par défaut, on cache le conteneur du panel */
+/* Le conteneur Flexbox de vos 3 boutons d'onglets */
+.skills-tabs {
+  display: flex !important;
+  gap: 0.6rem !important;
+  justify-content: center !important;
+  margin: 1.5rem 0 2.5rem 0 !important;
+  flex-wrap: wrap !important;
+}
+
+/* Style complet réappliqué aux boutons-onglets HTML */
+button.sk-tab {
+  display: inline-flex !important;
+  align-items: center !important;
+  gap: 0.4rem !important;
+  font-size: 0.88rem !important;
+  font-weight: 600 !important;
+  color: var(--color-text-secondary) !important;
+  background: var(--color-surface) !important;
+  border: 1px solid var(--color-border) !important;
+  border-radius: 12px !important;
+  padding: 0.65rem 1.3rem !important;
+  cursor: pointer !important;
+  font-family: inherit !important;
+  outline: none !important;
+  transition: color 0.2s, border-color 0.2s, background 0.2s, transform 0.15s !important;
+}
+
+/* Effets au survol des onglets */
+button.sk-tab:hover { 
+  color: var(--color-text) !important; 
+  border-color: var(--color-accent) !important; 
+  transform: translateY(-2px) !important; 
+}
+
+/* Style de l'onglet actif / sélectionné */
+button.sk-tab.active {
+  color: #ffffff !important;
+  border-color: var(--color-accent) !important;
+  background: var(--color-accent) !important;
+  transform: translateY(-2px) !important;
+}
+
+/* Gestion de l'affichage des conteneurs de compétences */
 .sk-panel { 
   display: none; 
 }
 
-/* 2. Quand il devient actif, on l'affiche */
 .sk-panel.active { 
-  display: block; 
+  display: block !important; 
   animation: fadeUp .35s ease forwards; 
 }
 
-/* 3. On force la grille interne à s'afficher et à distribuer les cartes */
+/* Grille interne accueillant les cartes de langages */
 .sk-grid {
   display: grid !important;
-  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
-  gap: 1rem;
-  width: 100%;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)) !important;
+  gap: 1rem !important;
+  width: 100% !important;
 }
 
 @keyframes fadeUp { 
@@ -521,7 +568,7 @@ section { position: relative; }
   to { opacity: 1; transform: translateY(0); } 
 }
 
-/* 4. Vos cartes de compétences */
+/* Design de vos cartes individuelles (PHP, Java, etc.) */
 .sk-card {
   background: var(--color-surface);
   border: 1px solid var(--color-border);
@@ -621,7 +668,7 @@ section { position: relative; }
 .veille-links {
   margin-top: 1.25rem;
   display: flex;
-  justify-content: flex-end; /* Aligne le bouton à droite */
+  justify-content: flex-end; 
 }
 
 .veille-link {
@@ -645,7 +692,6 @@ section { position: relative; }
   display: inline-block;
 }
 
-/* Effets au survol */
 .veille-link:hover {
   background: var(--color-accent-glow);
   border-color: var(--color-accent);
@@ -653,7 +699,7 @@ section { position: relative; }
 }
 
 .veille-link:hover span {
-  transform: translateX(3px); /* Fait bouger la petite flèche */
+  transform: translateX(3px); 
 }
 
 /* ── PROJETS ── */
@@ -869,7 +915,7 @@ body.loading {
   width: 100%;
   height: 100vh;
   background-color: var(--color-bg);
-  z-index: 99999; /* Augmenté pour être sûr de tout masquer */
+  z-index: 99999; 
   display: flex;
   align-items: center;
   justify-content: center;
@@ -900,20 +946,18 @@ body.loading {
   border-radius: 4px;
   overflow: hidden;
   padding: 2px;
-  margin-bottom: 0.75rem; /* Espace avant le pourcentage */
+  margin-bottom: 0.75rem; 
 }
 
 .progress-fill {
   height: 100%;
-  width: 0%; /* Le JS va modifier ce pourcentage en temps réel */
+  width: 0%; 
   background-color: var(--color-accent);
   border-radius: 2px;
   box-shadow: 0 0 12px var(--color-accent-glow);
-   animation: fillUp 1.8s linear forwards;
-  /* L'animation fillUp a été supprimée d'ici pour éviter les décalages */
+  animation: fillUp 1.8s linear forwards;
 }
 
-/* Style du texte de pourcentage (0% -> 100%) */
 #loader-percentage {
   font-family: 'Inter', sans-serif;
   font-size: 0.85rem;
