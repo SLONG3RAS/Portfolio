@@ -920,11 +920,11 @@ body.loading {
 
 .progress-fill {
   height: 100%;
-  width: 0%;
+  width: 0%; /* Le JS va modifier ce pourcentage en temps réel */
   background-color: var(--color-accent);
   border-radius: 2px;
   box-shadow: 0 0 12px var(--color-accent-glow);
-  animation: fillUp 1.5s linear forwards; /* Changé à 1.5 seconde */
+  /* L'animation fillUp a été supprimée d'ici pour éviter les décalages */
 }
 
 /* Style du texte de pourcentage (0% -> 100%) */
