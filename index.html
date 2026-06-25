@@ -758,15 +758,17 @@ document.body.classList.add('loading');
 
 window.addEventListener('load', () => {
   const percentageTxt = document.getElementById('loader-percentage');
+  const progressBar = document.querySelector('.progress-fill'); // On récupère la jauge
   const loader = document.getElementById('loading-screen');
   
   let currentPercent = 0;
-  const duration = 1500; // 1500 ms = 1,5 seconde chrono
-  const intervalTime = 15; // Intervalle réduit pour que les chiffres défilent très vite et proprement
+  const duration = 1500; // 1,5 seconde
+  const intervalTime = 15; 
   const step = 100 / (duration / intervalTime);
 
   const counter = setInterval(() => {
     currentPercent += step;
+    
     if (currentPercent >= 100) {
       currentPercent = 100;
       clearInterval(counter);
@@ -779,7 +781,10 @@ window.addEventListener('load', () => {
         document.body.classList.remove('loading');
       }, 600);
     }
-    percentageTxt.textContent = Math.floor(currentPercent) + '%';
+    
+    // SYNCHRONISATION PARFAITE :
+    percentageTxt.textContent = Math.floor(currentPercent) + '%'; // Met à jour le texte
+    progressBar.style.width = currentPercent + '%'; // Met à jour la jauge de la barre
   }, intervalTime);
 });
 </script>
