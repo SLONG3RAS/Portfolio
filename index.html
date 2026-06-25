@@ -753,7 +753,7 @@
     if (event.target === document.getElementById('syntheseModal')) closeSyntheseModal();
   }
 
-  // On bloque le site dès le début
+// On bloque le site dès le début
 document.body.classList.add('loading');
 
 window.addEventListener('load', () => {
@@ -761,8 +761,8 @@ window.addEventListener('load', () => {
   const loader = document.getElementById('loading-screen');
   
   let currentPercent = 0;
-  const duration = 3500; // 5000 ms = 5 secondes
-  const intervalTime = 50; // Mise à jour du texte toutes les 50ms
+  const duration = 2500; // 2500 ms = 2,5 secondes pile
+  const intervalTime = 25; // Plus rapide pour un défilement fluide
   const step = 100 / (duration / intervalTime);
 
   // Compteur dynamique pour le texte du pourcentage
@@ -778,7 +778,7 @@ window.addEventListener('load', () => {
       // On réactive le scroll du portfolio une fois l'écran disparu
       setTimeout(() => {
         document.body.classList.remove('loading');
-      }, 600); // 600ms correspond au temps du fondu CSS
+      }, 600); // Temps du fondu CSS
     }
     percentageTxt.textContent = Math.floor(currentPercent) + '%';
   }, intervalTime);
