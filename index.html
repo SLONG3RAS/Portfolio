@@ -753,9 +753,12 @@
   }
 
   window.addEventListener('load', () => {
-  const loader = document.getElementById('loading-screen');
-  loader.classList.add('fade-out');
-  });
+  // On attend 5 secondes avant de lancer le fondu de sortie
+  setTimeout(() => {
+    const loader = document.getElementById('loading-screen');
+    loader.classList.add('fade-out');
+  }, 5000); 
+});
 </script>
 </body>
 </html>
