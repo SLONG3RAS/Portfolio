@@ -924,7 +924,7 @@ body.loading {
   background-color: var(--color-accent);
   border-radius: 2px;
   box-shadow: 0 0 12px var(--color-accent-glow);
-  animation: fillUp 2.5s linear forwards; /* Toujours calé sur 5s */
+  animation: fillUp 1.5s linear forwards; /* Changé à 1.5 seconde */
 }
 
 /* Style du texte de pourcentage (0% -> 100%) */
