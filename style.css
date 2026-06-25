@@ -495,55 +495,33 @@ section { position: relative; }
   transition: color 0.3s;
 }
 
-/* ── SKILLS ── */
-#skills {
-  padding: 4rem 1.5rem;
-  background: linear-gradient(to bottom, transparent, var(--color-accent-glow), transparent);
-}
-.skills-tabs {
-  display: flex;
-  gap: 0.6rem;
-  justify-content: center;
-  margin: 1.5rem 0 2.5rem;
-  flex-wrap: wrap;
-}
-.sk-tab {
-  display: flex;
-  align-items: center;
-  gap: 0.4rem;
-  font-size: 0.88rem;
-  font-weight: 600;
-  color: var(--color-text-secondary);
-  background: var(--color-surface);
-  border: 1px solid var(--color-border);
-  border-radius: 12px;
-  padding: 0.65rem 1.3rem;
-  cursor: pointer;
-  font-family: inherit;
-  transition: color .2s, border-color .2s, background .2s, transform .15s;
-}
-.sk-tab:hover { color: var(--color-text); border-color: var(--color-accent); transform: translateY(-2px); }
-.sk-tab.active {
-  color: #fff !important;
-  border-color: var(--color-accent);
-  background: var(--color-accent);
-  transform: translateY(-2px);
-}
+/* --- CORRECTION ICI --- */
+
+/* 1. Par défaut, on cache le conteneur du panel */
 .sk-panel { 
-   display: none; 
-   animation: fadeUp .35s ease; 
+  display: none; 
 }
 
+/* 2. Quand il devient actif, on l'affiche */
 .sk-panel.active { 
-   display: min-content; 
+  display: block; 
+  animation: fadeUp .35s ease forwards; 
 }
 
-@keyframes fadeUp { from { opacity:0; transform:translateY(14px); } to { opacity:1; transform:none; } }
+/* 3. On force la grille interne à s'afficher et à distribuer les cartes */
 .sk-grid {
-  display: grid;
+  display: grid !important;
   grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
   gap: 1rem;
+  width: 100%;
 }
+
+@keyframes fadeUp { 
+  from { opacity: 0; transform: translateY(14px); } 
+  to { opacity: 1; transform: translateY(0); } 
+}
+
+/* 4. Vos cartes de compétences */
 .sk-card {
   background: var(--color-surface);
   border: 1px solid var(--color-border);
