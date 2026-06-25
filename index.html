@@ -761,11 +761,10 @@ window.addEventListener('load', () => {
   const loader = document.getElementById('loading-screen');
   
   let currentPercent = 0;
-  const duration = 2500; // 2500 ms = 2,5 secondes pile
-  const intervalTime = 25; // Plus rapide pour un défilement fluide
+  const duration = 1500; // 1500 ms = 1,5 seconde chrono
+  const intervalTime = 15; // Intervalle réduit pour que les chiffres défilent très vite et proprement
   const step = 100 / (duration / intervalTime);
 
-  // Compteur dynamique pour le texte du pourcentage
   const counter = setInterval(() => {
     currentPercent += step;
     if (currentPercent >= 100) {
@@ -775,10 +774,10 @@ window.addEventListener('load', () => {
       // Fin du chargement : on lance le fondu de sortie
       loader.classList.add('fade-out');
       
-      // On réactive le scroll du portfolio une fois l'écran disparu
+      // On réactive le scroll du portfolio
       setTimeout(() => {
         document.body.classList.remove('loading');
-      }, 600); // Temps du fondu CSS
+      }, 600);
     }
     percentageTxt.textContent = Math.floor(currentPercent) + '%';
   }, intervalTime);
