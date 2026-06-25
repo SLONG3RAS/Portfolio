@@ -870,6 +870,12 @@ footer {
   transition: background-color 0.3s;
 }
 
+/* Bloque le scroll du portfolio pendant le chargement */
+body.loading {
+  overflow: hidden !important;
+  height: 100vh;
+}
+
 /* ── ECRAN DE CHARGEMENT JEU VIDÉO ── */
 #loading-screen {
   position: fixed;
@@ -878,21 +884,19 @@ footer {
   width: 100%;
   height: 100vh;
   background-color: var(--color-bg);
-  z-index: 9999;
+  z-index: 99999; /* Augmenté pour être sûr de tout masquer */
   display: flex;
   align-items: center;
   justify-content: center;
   transition: opacity 0.6s ease, visibility 0.6s ease;
 }
 
-/* Conteneur central */
 .loader-container {
   width: 80%;
   max-width: 400px;
   text-align: center;
 }
 
-/* Texte "Chargement" style gaming */
 .loader-title {
   font-family: 'Inter', sans-serif;
   font-size: 0.9rem;
@@ -903,7 +907,6 @@ footer {
   animation: pulseBlink 1.5s infinite ease-in-out;
 }
 
-/* Contour de la barre */
 .progress-bar {
   width: 100%;
   height: 12px;
@@ -911,34 +914,38 @@ footer {
   border: 1px solid var(--color-border);
   border-radius: 4px;
   overflow: hidden;
-  padding: 2px; /* Donne un petit espace interne sympa */
+  padding: 2px;
+  margin-bottom: 0.75rem; /* Espace avant le pourcentage */
 }
 
-/* Remplissage de la barre (Gère les 5 secondes ici) */
 .progress-fill {
   height: 100%;
   width: 0%;
-  background-color: var(--color-accent); /* Violet ou Vert selon le mode */
+  background-color: var(--color-accent);
   border-radius: 2px;
   box-shadow: 0 0 12px var(--color-accent-glow);
-  animation: fillUp 5s linear forwards; /* 5 secondes pile */
+  animation: fillUp 5s linear forwards; /* Toujours calé sur 5s */
 }
 
-/* ── ANIMATIONS ── */
+/* Style du texte de pourcentage (0% -> 100%) */
+#loader-percentage {
+  font-family: 'Inter', sans-serif;
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--color-text-muted);
+  letter-spacing: 0.05em;
+}
 
-/* Remplissage de 0% à 100% */
 @keyframes fillUp {
   0% { width: 0%; }
   100% { width: 100%; }
 }
 
-/* Clignotement du texte comme dans les vieux jeux */
 @keyframes pulseBlink {
   0%, 100% { opacity: 0.4; }
   50% { opacity: 1; }
 }
 
-/* Disparition de l'écran complet */
 #loading-screen.fade-out {
   opacity: 0;
   visibility: hidden;
